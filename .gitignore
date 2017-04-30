@@ -1,3 +1,4 @@
 *.DS_Store
 cifar10/*
 ttt.t7
+.ipynb_checkpoints/*
