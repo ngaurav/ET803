@@ -65,3 +65,36 @@ Confusion Matrix:
 	 (1) (2) (3) (4) (5) (6) (7) (8) (9) (10)
 	 
 We can see that the Confusion Matrix is not symmetric. This implies that the training is biased towards some classes. And we cannot control it.
+
+## Instructions to learn
+
+To install torch7
+
+	git clone https://github.com/torch/distro.git ~/torch --recursive
+	cd ~/torch; bash install-deps;
+	./install.sh
+	
+### To Train
+
+You should have the directory structure of the root folder as follows
+
+- cifar10
+- - te_data.bin
+- - tr_data.bin
+- - tr_labels.bin
+- Final.ipynb
+- Readme.md
+- Train.ipynb
+
+To download the cifar10 data use this
+[link](https://www.cs.toronto.edu/~kriz/cifar-10-binary.tar.gz).
+
+cd to Project root directory and open ipython notebook in browser by using the command `ipython notebook`
+
+Now execute all the blocks in Train.ipynb
+
+The last block will save a neural network in a binary file in the same folder by name ttt.t7
+
+### To perform experiments on trained network
+
+Now execute all the blocks in Final.ipynb to see the results of our experiments.
