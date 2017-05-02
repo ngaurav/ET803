@@ -28,15 +28,27 @@ In Modifed Backpropagation the first two steps of iterations are same. In the 3r
 
 `I = I - lr * dL/dI`, here `dL/dI` is used for `dL/dI1` and lr is learning rate.
 
-Note that we take mean of all the training images to get initial value of `I`.
+Note that we take mean of all the training images to initialize the value of `I`.
 
 ## Data
 
-Something about CIFAR 10
+The CIFAR-10 dataset consists of 60000 32x32 colour images in 10 classes, with 6000 images per class. There are 50000 training images and 10000 test images.
+
+Training Phase:
+
+Below is an illustrative diagramatic representation of inner layers neural network. I am not using this network. I am training on a similar but simpler network.
+
+### Neuaral Network Structure 
 
 ![Alt](images/2.png "Title")
 
 ## Observations
+
+How difficult is to classify images for a neural network?
+
+![Alt](images/3.png "Title")
+
+As we can see that when we optimise the image for class '8', maximum score that we achieve is 90. At the same time, class '1', '6' and '9' also have high scores around 84. So, every prediction made is not absolute cognition, but it is a relative guess.
 
 Confusion Matrix:
 
@@ -48,9 +60,8 @@ Confusion Matrix:
 	[  8   6  34  89  35 748  38  32   1   9] 6 dog
 	[  4   2  18   9  14  14 930   4   2   3] 7 frog
 	[  6   2  23  18  31  55  17 833   0  15] 8 horse
-	[ 31  29  15  11   8   7  15   0 856  28] 8 ship
+	[ 31  29  15  11   8   7  15   0 856  28] 9 ship
 	[ 13  67   4   5   0   4   7   7  18 875] 10 truck
-	 (1) (2) (3) (4) (6) (6) (7) (8) (9) (10)
-
-Some png
-
+	 (1) (2) (3) (4) (5) (6) (7) (8) (9) (10)
+	 
+We can see that the Confusion Matrix is not symmetric. This implies that the training is biased towards some classes. And we cannot control it.
